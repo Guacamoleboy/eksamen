@@ -1,19 +1,18 @@
 1
 
-https://dat1cphbusiness.github.io/content/exam/todo.html
-
+https://dat1cphbusiness.github.io/content/Exam/exam1
 2
 
-https://dat1cphbusiness.github.io/content/exam/salaries.html
+https://dat1cphbusiness.github.io/content/Exam/exam2
 
 3
 
-https://dat1cphbusiness.github.io/content/exam/anonymize.html
+https://dat1cphbusiness.github.io/content/Exam/exam3
 
 4
 
-https://dat1cphbusiness.github.io/content/exam/anonymize.html
+https://dat1cphbusiness.github.io/content/Exam/exam4
 
 5
 
-https://dat1cphbusiness.github.io/content/exam/users.html
+https://dat1cphbusiness.github.io/content/Exam/exam5
