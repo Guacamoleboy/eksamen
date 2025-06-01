@@ -64,7 +64,7 @@ public class User {
     public String toString() {
         String result = "Name: " + name + ", Password: " + password;
 
-        if (email != null) {
+        if (email != null && !email.isEmpty()) {
             result += ", Email: " + email;
         }
         if (number != 0) {

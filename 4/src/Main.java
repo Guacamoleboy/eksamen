@@ -51,6 +51,7 @@ public class Main {
 
             System.out.print("\nEnter flower ID to buy (" + i + "/" + 3 + "): ");
             int inputId = scanner.nextInt();
+            scanner.nextLine();
 
             // Find flower by ID
             Flower selected = null;
@@ -67,6 +68,7 @@ public class Main {
                 totalPrice += selected.getPrice();
             } else {
                 System.out.println("Invalid flower ID.");
+                i--;
             }
         }
 
