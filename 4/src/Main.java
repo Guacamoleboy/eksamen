@@ -18,8 +18,11 @@ public class Main {
     // Attributes
     private static Scanner scanner = new Scanner(System.in);
     private static int totalPrice;
+    private static final String RED = "\u001B[31m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String RESET = "\u001B[0m";
 
-    // ____________________________________
+    // ______________________________________________________
 
     public static void main(String[] args) {
 
@@ -44,7 +47,7 @@ public class Main {
 
         // Display all flowers
         for (Flower f : flowers){
-            System.out.println(f.getNumber() + "." + " | " + f.getFlowerName() + " | " + f.getPrice() + " kr");
+            System.out.println(f.getNumber() + "." + " | " + f.getFlowerName() + " | " + GREEN + f.getPrice() + " kr" + RESET);
         }
 
         for (int i = 1; i <= 3; i++) {
@@ -72,11 +75,22 @@ public class Main {
             }
         }
 
+        displayGiftQuestion();
+
+        System.out.println("\nYour total price: " + RED + totalPrice + " kr");
+
+        scanner.close();
+
+    }
+
+    // ______________________________________________________
+
+    public static void displayGiftQuestion(){
         boolean answered = false;
-        System.out.println("Would you like your flowers tied together as a present? | 50 kr | Yes / No");
+
+        System.out.println("\nWould you like your flowers tied together as a present? " + GREEN + "50 kr" + RESET + "\nTotal price so far: " + RED + totalPrice + " kr" + RESET);
 
         while (!answered) {
-
             String answer = scanner.nextLine().trim();
 
             if (answer.equalsIgnoreCase("yes")) {
@@ -87,12 +101,8 @@ public class Main {
             } else {
                 System.out.println("Please answer with 'Yes' or 'No':");
             }
-        }
-
-        System.out.println("\nYour total price: " + totalPrice + " kr");
-
-        scanner.close();
+        } // While-end
 
     }
 
-}
+} // Main class end
