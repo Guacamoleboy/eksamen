@@ -51,7 +51,7 @@ public class Validation {
 
         String name = currentUser.getName();
 
-        if(name == null || name.length() <=6 || !name.matches("^[a-zA-ZæøåÆØÅ_\\s]+$")){
+        if(name == null || name.length() <=6 || !name.matches("^[a-zA-ZæøåÆØÅ0-9_]+$")){
             return false;
         }
 
