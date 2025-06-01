@@ -28,7 +28,6 @@ public class Main {
 
         // Display
         todo.displayItems();
-        todo.displayNotDone();
 
     }
 
