@@ -1,11 +1,10 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ItemLoader {
 
-    // Attributes
+    // Attributess
 
     // _____________________________________
 
@@ -33,13 +32,40 @@ public class ItemLoader {
                 boolean isDone = status.equalsIgnoreCase("yes");
 
                 items.add(new Item(description, isDone));
+
             }
 
         } catch (FileNotFoundException e) {
+
             System.out.println("File path wasn't found.. Try again!");
+
         }
 
         return items;
+
+    }
+
+    // ____________________________________________
+
+    /*
+
+        Method to add to .csv file
+
+    */
+
+     public void addTodo(String description, boolean status, String path){
+
+        String statusString = status ? "Yes" : "No";
+        String lineToAdd = description + ", " + statusString;
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) {
+            writer.newLine();
+            writer.write(lineToAdd);
+            System.out.println("Added line to .csv file" + lineToAdd);
+        } catch (IOException e){
+            System.out.println("Error adding the todo item");
+        }
+
     }
 
 } // ItemLoader class end

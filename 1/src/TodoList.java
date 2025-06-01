@@ -43,4 +43,21 @@ public class TodoList {
 
     }
 
-}
+    // ____________________________________________
+
+    public void displayStatus(){
+
+        for (Item i : items){
+
+            if(!i.getIsDone()){ // Remove ! to get what's done
+                System.out.println("This task isn't done: " + i.getDescription());
+                //System.out.println("This task is done: " + i.getDescription());
+            }
+
+        }
+
+    }
+
+    // ____________________________________________
+
+} // TodoList class end

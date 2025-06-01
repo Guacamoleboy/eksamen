@@ -23,4 +23,16 @@ public class Item {
         return this.isDone;
     }
 
+    // _______________________________________
+
+    public void setStatus(boolean status){
+        this.isDone = status;
+    }
+
+    // _______________________________________
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
 } // Item class end
