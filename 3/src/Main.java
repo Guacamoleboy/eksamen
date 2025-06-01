@@ -6,8 +6,7 @@
     Comments:
     N/A
 
-    Version 1.0
-
+    Version 2.0
 
 */
 
@@ -19,6 +18,7 @@ public class Main {
     // Attributes
     private static ArrayList<String> names = new ArrayList<>();
     private static final StringHandle sh = new StringHandle();
+    private static final String path = "data/textData.csv";
 
     // ______________________________________________
 
@@ -26,7 +26,11 @@ public class Main {
 
         // Add to ArrayList
         Collections.addAll(names, "Tess", "Jonas", "Tine", "Andreas", "Ebou", "Carl Emil", "Oliver", "Drake");
-        ArrayList<MessageHandle> data = sh.readData("data/textData.csv");
+
+        // Add to csv
+        sh.saveToCsv("data/textData.csv", "Jonas kan godt lide at gå i fitness...", "Male");
+
+        ArrayList<MessageHandle> data = sh.readData(path);
 
         // get(i) had some bugs so I'm doing it this way instead
         ArrayList<String> messages = new ArrayList<>();

@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,16 +38,23 @@ public class StringHandle {
             // Fix for double names side by side
             for (int j = 0; j < names.size(); j++) {
                 for (int k = j + 1; k < names.size(); k++) {
+
                     String doubleName = names.get(j) + " " + names.get(k);
+
                     if (finalMsg.contains(doubleName) && genderMsg.equalsIgnoreCase("Male")) {
+
                         finalMsg = finalMsg.replace(doubleName, GREEN + "han ham" + RESET);
                         break;
+
                     } else if(finalMsg.contains(doubleName) && genderMsg.equalsIgnoreCase("Female")){
+
                         finalMsg = finalMsg.replace(doubleName, GREEN + "hun hende" + RESET);
                         break;
-                    }
-                }
-            }
+
+                    } // if-else end
+
+                } // for (2) end
+            } // for (1) end
 
             // For each name
             for (String name : names) {
@@ -64,7 +73,9 @@ public class StringHandle {
         ArrayList<MessageHandle> data = new ArrayList<>();
 
         try (Scanner scan = new Scanner(new File(path))) {
+
             scan.nextLine(); // skip header
+
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 String[] values = line.split(", ");
@@ -72,6 +83,7 @@ public class StringHandle {
                     data.add(new MessageHandle(values[0].trim(), values[1].trim()));
                 }
             }
+
         } catch (FileNotFoundException e) {
             System.out.println("Error - File not found...");
         }
@@ -94,6 +106,22 @@ public class StringHandle {
             System.out.println(highlighted);
         }
 
+    }
+
+    // ____________________________________________
+
+    public void saveToCsv(String path, String message, String gender) {
+
+        String lineToAdd = message + ", " + gender;
+
+        try (FileWriter writer = new FileWriter(path, true)) {
+
+            writer.write("\n" + lineToAdd);
+            System.out.println("Added to CSV: " + lineToAdd);
+
+        } catch (IOException e) {
+            System.out.println("Error adding to CSV: " + e.getMessage());
+        }
     }
 
 } // StringHandle class end
