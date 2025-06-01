@@ -60,4 +60,21 @@ public class TodoList {
 
     // ____________________________________________
 
+    public void displayChangeStatus(int number) {
+
+        if (number < 1 || number > items.size()) {
+            System.out.println("Invalid task number.");
+            return;
+        }
+
+        Item item = items.get(number - 1);
+
+        boolean currentStatus = item.getIsDone();
+
+        item.setStatus(!currentStatus);
+
+
+        System.out.println("Changed task status for: " + item.getDescription());
+    }
+
 } // TodoList class end

@@ -6,12 +6,13 @@
     Comments:
     N/A
 
-    Version 1.0
+    Version 2.0
 
 
 */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -29,8 +30,21 @@ public class Main {
 
         // Display
         todo.displayItems();
+
+        // Display by status
         //todo.displayStatus();
+
+        // Add more to .csv file
         //il.addTodo("Lav kaffe", true, path);
+
+        // Change status on input
+        /*Scanner scanner = new Scanner(System.in);
+        System.out.print("Changing Task Status..\nTask number: ");
+        int number = scanner.nextInt();
+        todo.displayChangeStatus(number);*/
+
+        // Save entire file again after being set
+        //il.saveToFile(path, "Description, Done", items);
 
     }
 
