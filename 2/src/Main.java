@@ -34,6 +34,9 @@ public class Main {
         em.add(new CommissionEmployee(20000, 10000, 20));
         em.add(new CommissionEmployee(30000, 30000, 50));
 
+        // Sort list depending on value
+        //em.sort((e1, e2) -> (int) (e2.calculateSalary() - e1.calculateSalary()));
+
         displayPay(em);
 
     }
